@@ -1,0 +1,42 @@
+<MapView_new>:
+
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Button:
+            id: my_button
+            text: "Press Here"
+            size_hint_x: 0.5
+            size_hint_y: 0.2
+            pos_hint: {'x': 0, 'y': 0.8}
+            on_press: root.button_press(my_map_view)
+        TextInput:
+            id: latitude_map
+            size_hint_x: 0.5
+            size_hint_y: 0.05
+            pos_hint: {'x': 0.5, 'y': 0.90}
+        TextInput:
+            id: longitude_map
+            size_hint_x: 0.5
+            size_hint_y: 0.05
+            pos_hint: {'x': 0.5, 'y': 0.80}
+
+        MapView:
+            id: my_map_view
+            lat: 50.6394
+            lon: 3.057
+            zoom: 13
+            size_hint_y: 0.8
+            size_hint_x: 1
+            pos_hint: {'x': 0, 'y': 0}
+            MapMarkerPopup:
+                id: my_mark_pop_up
+                lat: 50.6394
+                lon: 3.057
+                popup_size: dp(230), dp(130)
