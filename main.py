@@ -4,12 +4,26 @@ from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.garden.mapview import MapView, MapMarker
-
+from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.properties import NumericProperty
+from kivy.uix.screenmanager import SlideTransition
 
 kivy.require('1.10.0')
 
-class MapView_new(FloatLayout):
+
+class MenuScreen(Screen):
+    pass
+
+class MapScreen(Screen):
+    pass
+
+# Create the screen manager
+sm = ScreenManager()
+sm.add_widget(MenuScreen(name='menu'))
+sm.add_widget(MapScreen(name='maps'))
+
+
+class MapView_new(Screen):
 
 
     def button_press(self, id):
@@ -30,7 +44,7 @@ class MapView_new(FloatLayout):
 class RastreatorApp(App):
 
     def build(self):
-        return MapView_new()
+        return sm
         # self.lati = -23.5356201
         # self.long = -46.7913307
         # self.f = FloatLayout()

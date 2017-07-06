@@ -1,6 +1,20 @@
-<MapView_new>:
+<MenuScreen>:
+    BoxLayout:
+        Label:
+            text: "Menu"
+            size_hint_x: 0.5
+            size_hint_y: 0.4
+            pos_hint: {'x': 0.25, 'y': 1}
+
+        Button:
+            text: "Go to Maps"
+            on_press: root.manager.current = 'maps'
+            size_hint_x: 0.5
+            size_hint_y: 0.4
+            pos_hint: {'x': 0.25, 'y': 0.5}
 
 
+<MapScreen>:
     FloatLayout:
         canvas:
             Color:
